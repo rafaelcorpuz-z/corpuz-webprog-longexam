@@ -1,50 +1,51 @@
-import Button from '../components/Button';
+import { Link } from 'react-router-dom';
 
-const NotFoundPage = () => {
+function NotFoundPage() {
   return (
-    <div className="flex w-full flex-col gap-6">
-      <section className="border-y-2 border-zinc-900 bg-zinc-50 px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
-        <div className="max-w-3xl">
-          <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-zinc-500">
-            Error
-          </p>
-          <h1 className="text-6xl font-bold leading-tight text-zinc-900 sm:text-7xl">
-            404
-          </h1>
-          <p className="mt-4 text-lg leading-7 text-zinc-600">
-            Page not found. The page you're looking for doesn't exist or has been moved.
-          </p>
-          <div className="mt-6 flex gap-3">
-            <Button to="/">Back Home</Button>
-            <Button to="/products">View Products</Button>
-          </div>
-        </div>
-      </section>
+    <div className="min-h-screen bg-slate-950 text-slate-100 flex items-center justify-center px-6">
+      <div className="w-full max-w-3xl rounded-xl border border-slate-800 bg-slate-900/95 p-10 text-center">
+        <p className="text-[120px] font-black leading-none text-slate-100/10 select-none sm:text-[160px]">
+          404
+        </p>
+        <p className="mb-4 text-[11px] font-black uppercase tracking-[0.4em] text-amber-200">
+          Page not found
+        </p>
+        <h1 className="text-4xl font-black uppercase text-slate-100 sm:text-5xl">
+          We couldn&apos;t find that page.
+        </h1>
+        <p className="mt-4 max-w-xl mx-auto text-sm leading-7 text-slate-400">
+          The page may have moved, or the link might be incorrect. Use the links below to continue browsing.
+        </p>
 
-      <section className="border-y-2 border-zinc-900 bg-zinc-50 px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
-        <div className="max-w-3xl">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-zinc-500">
-            Quick Links
-          </p>
-          <h2 className="mt-2 text-2xl font-semibold text-zinc-900">Explore the site</h2>
-          
-          <div className="mt-6 space-y-3">
-            <div className="rounded-3xl border-2 border-zinc-900 bg-zinc-100 p-4">
-              <h3 className="font-semibold text-zinc-900">Home</h3>
-              <p className="mt-1 text-sm text-zinc-600">Return to the homepage</p>
-              <Button to="/" className="mt-3">Go Home</Button>
-            </div>
-            
-            <div className="rounded-3xl border-2 border-zinc-900 bg-zinc-100 p-4">
-              <h3 className="font-semibold text-zinc-900">Products</h3>
-              <p className="mt-1 text-sm text-zinc-600">Browse all featured store items</p>
-              <Button to="/products" className="mt-3">View Products</Button>
-            </div>
-          </div>
+        <div className="mt-8 grid gap-3 sm:grid-cols-2">
+          <Link
+            to="/"
+            className="inline-flex items-center justify-center rounded-lg border border-amber-500 bg-amber-500 px-6 py-3 text-[11px] font-black uppercase tracking-widest text-slate-950 transition hover:bg-transparent hover:text-amber-500"
+          >
+            Back to Home
+          </Link>
+          <Link
+            to="/products"
+            className="inline-flex items-center justify-center rounded-lg border border-slate-800 bg-slate-900 px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-100 transition hover:border-amber-400 hover:text-amber-200"
+          >
+            View Shop
+          </Link>
+          <Link
+            to="/about"
+            className="inline-flex items-center justify-center rounded-lg border border-slate-800 bg-slate-900 px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-100 transition hover:border-amber-400 hover:text-amber-200"
+          >
+            About
+          </Link>
+          <Link
+            to="/auth/signin"
+            className="inline-flex items-center justify-center rounded-lg border border-slate-800 bg-slate-900 px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-100 transition hover:border-amber-400 hover:text-amber-200"
+          >
+            Sign In
+          </Link>
         </div>
-      </section>
+      </div>
     </div>
-  )
+  );
 }
 
-export default NotFoundPage
+export default NotFoundPage;

@@ -1,23 +1,30 @@
 import { Link } from 'react-router-dom';
 import Button from '../../components/Button';
+import logo from '../../assets/img/nubdexchange_logo.png';
 
 const inputClasses =
-  'mt-2 w-full rounded-xl border border-zinc-300 bg-zinc-100 px-4 py-3 text-sm text-zinc-900 outline-none transition placeholder:text-zinc-400 focus:border-zinc-900 focus:bg-zinc-50';
-
-const actionButtonClassName = 'w-full rounded-xl py-3 text-[11px] tracking-[0.2em]';
+  'mt-2 w-full rounded-lg border border-slate-700 bg-slate-900 px-4 py-3 text-sm text-slate-100 outline-none transition placeholder:text-slate-500 focus:border-amber-400 focus:bg-slate-950';
+const actionButtonClassName = 'w-full rounded-lg py-3 text-[11px] tracking-[0.2em]';
 
 const SignUpPage = () => {
   return (
-    <>
-      <h1 className="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">Sign Up</h1>
-      <p className="mt-3 text-sm leading-6 text-zinc-600">
+    <div className="mx-auto w-full max-w-md rounded-xl bg-slate-950/95 p-8">
+
+      <h1 className="text-3xl font-bold tracking-tight text-slate-100 sm:text-4xl">Sign Up</h1>
+      <p className="mt-3 text-sm leading-6 text-slate-400">
         Create a store account for faster checkout, order updates, and pickup details.
+      </p>
+      <p className="mt-4 text-sm text-slate-400">
+        Just browsing?{' '}
+        <Link to="/" className="font-semibold text-amber-300 transition hover:text-amber-200">
+          Back to homepage
+        </Link>
       </p>
 
       <form className="mt-8 space-y-5">
         <div className="grid gap-5 sm:grid-cols-2">
           <div>
-            <label htmlFor="first-name" className="text-sm font-medium text-zinc-700">
+            <label htmlFor="first-name" className="text-sm font-medium text-slate-100">
               First Name
             </label>
             <input
@@ -29,7 +36,7 @@ const SignUpPage = () => {
             />
           </div>
           <div>
-            <label htmlFor="last-name" className="text-sm font-medium text-zinc-700">
+            <label htmlFor="last-name" className="text-sm font-medium text-slate-100">
               Last Name
             </label>
             <input
@@ -43,7 +50,7 @@ const SignUpPage = () => {
         </div>
 
         <div>
-          <label htmlFor="signup-email" className="text-sm font-medium text-zinc-700">
+          <label htmlFor="signup-email" className="text-sm font-medium text-slate-100">
             Email
           </label>
           <input
@@ -56,7 +63,7 @@ const SignUpPage = () => {
         </div>
 
         <div>
-          <label htmlFor="signup-password" className="text-sm font-medium text-zinc-700">
+          <label htmlFor="signup-password" className="text-sm font-medium text-slate-100">
             Password
           </label>
           <input
@@ -66,7 +73,7 @@ const SignUpPage = () => {
             autoComplete="new-password"
             className={inputClasses}
           />
-          <p className="mt-2 text-xs leading-5 text-zinc-500">
+          <p className="mt-2 text-xs leading-5 text-slate-500">
             Use a secure password with letters, numbers, and symbols.
           </p>
         </div>
@@ -85,13 +92,13 @@ const SignUpPage = () => {
         </div>
       </form>
 
-      <div className="mt-8 border-t border-zinc-200 pt-6 text-sm text-zinc-600">
+      <div className="mt-8 text-sm text-slate-400">
         Already have an account?{' '}
-        <Link to="/auth/signin" className="font-semibold text-zinc-900 transition hover:text-zinc-600">
+        <Link to="/auth/signin" className="font-semibold text-amber-300 transition hover:text-amber-200">
           Log In
         </Link>
       </div>
-    </>
+    </div>
   );
 };
 
